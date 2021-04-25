@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "0.1.0",
+  "main": "server.js",
+  "author": "test",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "@types/koa": "^2.13.1",
+    "@types/koa__router": "^8.0.4",
+    "@types/node": "^14.14.41",
+    "concurrently": "^6.0.2",
+    "esbuild": "^0.11.14",
+    "nodemon": "^2.0.7",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "@koa/router": "^10.0.0",
+    "koa": "^2.13.1"
+  },
+  "scripts": {
+    "watch": "esbuild src/server.ts --watch --outfile=./build/server.js --target=node16 --platform=node",
+    "start": "nodemon ./build/server.js",
+    "dev": "concurrently --prefix-colors -prefix --kill-others \"yarn watch\" \"yarn start\"",
+    "clean": "rm -rf build"
+  }
+}

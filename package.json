@@ -1,0 +1,17 @@
+{
+  "name": "snowpack-esbuild-setup",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "test",
+  "license": "MIT",
+  "private": "true",
+  "workspaces": [
+    "./packages/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^6.0.2"
+  },
+  "scripts": {
+    "dev": "concurrently --prefix-colors -prefix --kill-others \"yarn workspace server dev\" \"yarn workspace client dev\""
+  }
+}
